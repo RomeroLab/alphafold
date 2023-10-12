@@ -31,23 +31,31 @@ mamba install  -c conda-forge  pdbfixer=1.8
 ```shell
 # download data
 scripts/download_all_data.sh /mnt/scratch/alphafold_db
+# download reduced database also
+scripts/download_small_bfd.sh /mnt/scratch/alphafold_db
 
 cd /mnt/scratch/alphafold_db
 chmod -R o+rw *
 chmod -R g+rw *
 
 # script to backup parameters to research drive
-/mnt/scratch/alphafold_db/backup_database.sh
+(cd /mnt/scratch/alphafold_db ; ln -s ~/alphafold/conda/backup_database.sh)
+
+# Note: backup database script needs to be run as a user and not romeroroot
+# as romeroroot cannot write to the rdrive
+
 ```
 
 
 ## Download code
 
-
 ```
 git clone git@github.com:RomeroLab/alphafold.git
 
 cd alphafold
+git checkout local_changes
+
+# install sterochemical properties
 wget -q -P alphafold/common/   https://git.scicore.unibas.ch/schwede/openstructure/-/raw/7102c63615b64735c4941278d92b554ec94415f8/modules/mol/alg/src/stereo_chemical_props.txt
 
 ```

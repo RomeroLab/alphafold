@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Note: This backup database script needs to be run as a user and not
+# romeroroot as romeroroot cannot write to the rdrive
+
 
 local_dir="/mnt/scratch/alphafold_db"
 remote_dir="General/Sameer/full_alphafold_db"
@@ -30,11 +33,9 @@ SMBCLIENTCOMMANDS
 
 }
 
-# bfd
 echo "Backing up BFD"
 put_directory bfd
 
-# mgnify
 echo "Backing up mgnify"
 put_directory mgnify
 
@@ -46,11 +47,13 @@ put_directory pdb70
 
 echo "tarring pdb_mmcif directory"
 (cd $local_dir ; tar cf pdb_mmcif.tar pdb_mmcif)
-put_file pdb_mmcif.tar 
-rm -f ${local_dir}/pdb_mmcif.tar
+(put_file pdb_mmcif.tar && rm -f ${local_dir}/pdb_mmcif.tar)
 
 echo "Backing up pdb_seqres"
 put_directory pdb_seqres
+
+echo "Backing up small BFD"
+put_directory small_bfd
 
 echo "Backing up uniprot"
 put_directory uniprot

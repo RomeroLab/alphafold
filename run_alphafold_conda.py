@@ -44,11 +44,9 @@ def set_default_conda_flags():
         FLAGS.data_dir, 'pdb70', 'pdb70'))
 
   if FLAGS.db_preset == 'reduced_dbs':
-    raise ValueError("Reduced databases are not downloaded yet")
-    # NOTE: The small database isn't downloaded
     ## Path to the Small BFD database for use by JackHMMER.
-    #small_bfd_database_path = os.path.join(
-    #    FLAGS.data_dir, 'small_bfd', 'bfd-first_non_consensus_sequences.fasta')
+    set_flag_if_none('small_bfd_database_path',  os.path.join(
+        FLAGS.data_dir, 'small_bfd', 'bfd-first_non_consensus_sequences.fasta'))
   else:
     # Path to the Uniref30 database for use by HHblits.
     set_flag_if_none('uniref30_database_path', os.path.join(
