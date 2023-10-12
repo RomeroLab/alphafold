@@ -11,7 +11,6 @@ def set_flag_if_none(name, value):
     setattr(FLAGS, name, value)
 
 def set_default_conda_flags():
-  print("here")
   set_flag_if_none("data_dir", DEFAULT_DATA_DIR)
   set_flag_if_none("max_template_date", MAX_TEMPLATE_DATE)
 

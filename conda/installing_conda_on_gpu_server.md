@@ -32,8 +32,24 @@ mamba install  -c conda-forge  pdbfixer=1.8
 # download data
 scripts/download_all_data.sh /mnt/scratch/alphafold_db
 
+cd /mnt/scratch/alphafold_db
+chmod -R o+rw *
+chmod -R g+rw *
+
 # script to backup parameters to research drive
 /mnt/scratch/alphafold_db/backup_database.sh
+```
+
+
+## Download code
+
+
+```
+git clone git@github.com:RomeroLab/alphafold.git
+
+cd alphafold
+wget -q -P alphafold/common/   https://git.scicore.unibas.ch/schwede/openstructure/-/raw/7102c63615b64735c4941278d92b554ec94415f8/modules/mol/alg/src/stereo_chemical_props.txt
+
 ```
 
 
