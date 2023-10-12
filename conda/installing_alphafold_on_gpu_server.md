@@ -1,7 +1,11 @@
 ## Conda environment installation
 
-Following instructions from
-[kliniinalab](https://github.com/kalininalab/alphafold_non_docker) and making
+These are the commands used to install Alphafold on the GPU server. They are
+saved here in case we need to redo them at some point in the future (hard disk
+crash, new server etc).
+
+Mostly we follow instructions from
+[kliniinalab](https://github.com/kalininalab/alphafold_non_docker) and make
 small modifications
 
 

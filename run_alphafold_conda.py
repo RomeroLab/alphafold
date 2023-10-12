@@ -56,8 +56,6 @@ def set_default_conda_flags():
         FLAGS.data_dir, 'bfd',
         'bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt'))
 
-
-
 def main_conda(argv):
   set_default_conda_flags()
   main(argv)
