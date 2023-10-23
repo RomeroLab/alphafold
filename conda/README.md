@@ -42,9 +42,9 @@ different, the instructions below will not work for you.
 1. Run alphafold multimer model
    ```shell
     python /home/romeroroot/alphafold/run_alphafold_conda.py \
-    	--fasta_paths ~/multimer.fasta \
-	--output_dir ~/alphafold_output \
-	--model_preset multimer 2>&1 | tee ~/alphafold_output/log.txt
+        --fasta_paths ~/multimer.fasta \
+        --output_dir ~/alphafold_output \
+        --model_preset multimer 2>&1 | tee ~/alphafold_output/log.txt
    ```
 1. The program will first search the gigantic databases to create an MSA and
    also try to find templates for your sequences. (This takes around an hour
@@ -56,5 +56,6 @@ different, the instructions below will not work for you.
    ```shell
    conda deactivate
    ```
-1. If you need more help look at the [README.md](../README.md) file in the
+1. If you need more help look at Running Alphafold section of
+   the [README.md](../README.md#running-alphafold) file in the
    parent directory to this one. 
