@@ -4,7 +4,7 @@
 # romeroroot as romeroroot cannot write to the rdrive
 
 
-local_dir="/mnt/scratch/alphafold_db"
+local_dir="/mnt/alphafold/alphafold_db"
 remote_dir="General/Sameer/full_alphafold_db"
 
 function put_directory () {

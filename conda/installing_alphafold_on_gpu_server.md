@@ -34,16 +34,16 @@ mamba install  -c conda-forge  pdbfixer=1.8
 
 ```shell
 # download data
-scripts/download_all_data.sh /mnt/scratch/alphafold_db
+scripts/download_all_data.sh /mnt/alphafold/alphafold_db
 # download reduced database also
-scripts/download_small_bfd.sh /mnt/scratch/alphafold_db
+scripts/download_small_bfd.sh /mnt/alphafold/alphafold_db
 
-cd /mnt/scratch/alphafold_db
+cd /mnt/alphafold/alphafold_db
 chmod -R o+rw *
 chmod -R g+rw *
 
 # script to backup parameters to research drive
-(cd /mnt/scratch/alphafold_db ; ln -s ~/alphafold/conda/backup_database.sh)
+(cd /mnt/alphafold/alphafold_db ; ln -s ~/alphafold/conda/backup_database.sh)
 
 # Note: backup database script needs to be run as a user and not romeroroot
 # as romeroroot cannot write to the rdrive

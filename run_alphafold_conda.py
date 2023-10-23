@@ -3,7 +3,7 @@ from absl import flags
 
 from run_alphafold import FLAGS, app, main
 
-DEFAULT_DATA_DIR="/mnt/scratch/alphafold_db"
+DEFAULT_DATA_DIR="/mnt/alphafold/alphafold_db"
 MAX_TEMPLATE_DATE="2030-01-01"
 
 def set_flag_if_none(name, value):
